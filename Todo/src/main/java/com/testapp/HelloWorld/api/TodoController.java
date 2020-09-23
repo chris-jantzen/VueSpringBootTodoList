@@ -3,11 +3,13 @@ package com.testapp.HelloWorld.api;
 import com.testapp.HelloWorld.model.Todo;
 import com.testapp.HelloWorld.service.TodoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.lang.NonNull;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.UUID;
 
+@CrossOrigin(origins = "http://localhost:8081")
 @RequestMapping("api/v1/todo")
 @RestController
 public class TodoController {
@@ -20,7 +22,7 @@ public class TodoController {
     }
 
     @PostMapping
-    public Todo addTodo(@RequestBody Todo todo) {
+    public Todo addTodo(@NonNull @RequestBody Todo todo) {
         return todoService.addTodo(todo);
     }
 
@@ -40,7 +42,7 @@ public class TodoController {
     }
 
     @PutMapping(path = "{id}")
-    public Todo updateTodoById(@PathVariable("id") UUID id, @RequestBody Todo todo) {
+    public Todo updateTodoById(@PathVariable("id") UUID id, @NonNull @RequestBody Todo todo) {
         return todoService.updateTodo(id, todo).orElse(null);
     }
 }

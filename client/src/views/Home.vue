@@ -33,8 +33,7 @@ export default {
   },
   async created() {
     try {
-      const numberOfTodos = 7
-      this.todos = await getTodos(numberOfTodos)
+      this.todos = await getTodos()
     } catch (err) {
       console.error(err)
     }

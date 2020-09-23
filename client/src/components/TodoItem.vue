@@ -19,7 +19,7 @@ export default {
   methods: {
     async markComplete() {
       this.todo.completed = !this.todo.completed
-      await updateTodo(this.todo.id)
+      await updateTodo(this.todo.id, this.todo.completed)
     },
   },
 }
@@ -35,6 +35,8 @@ export default {
 }
 #item-text {
   cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 .is-complete {
   text-decoration: line-through;

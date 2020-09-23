@@ -6,13 +6,13 @@ import java.util.UUID;
 
 public class Todo {
     private final UUID id;
-    private final String title;
+    private String title;
     private Boolean completed;
 
-    public Todo(@JsonProperty("id") UUID id, @JsonProperty("title") String title) {
+    public Todo(@JsonProperty("id") UUID id, @JsonProperty("title") String title, @JsonProperty("completed") Boolean completed) {
         this.id = id;
         this.title = title;
-        this.completed = false;
+        this.completed = completed;
     }
 
     public UUID getId() {
@@ -22,6 +22,14 @@ public class Todo {
 
     public String getTitle() {
         return this.title;
+    }
+
+    public Boolean getCompleted() {
+        return this.completed;
+    }
+
+    public void setTitle(String newTitle) {
+        this.title = newTitle;
     }
 
     public void CheckOff() {
