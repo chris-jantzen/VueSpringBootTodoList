@@ -12,6 +12,9 @@ public interface TodoDao {
 
     default Todo addTodo(Todo todo) {
         UUID id = UUID.randomUUID();
+        if (todo.getCompleted() == null) {
+            todo.setCompleted(false);
+        }
         return addTodo(id, todo);
     }
 

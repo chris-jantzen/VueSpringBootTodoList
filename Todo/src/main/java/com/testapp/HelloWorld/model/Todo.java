@@ -32,6 +32,10 @@ public class Todo {
         this.title = newTitle;
     }
 
+    public void setCompleted(Boolean completed) {
+        this.completed = completed;
+    }
+
     public void CheckOff() {
         this.completed = !this.completed;
     }
