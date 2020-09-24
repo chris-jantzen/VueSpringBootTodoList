@@ -43,6 +43,17 @@ public class TodoController {
 
     @PutMapping(path = "{id}")
     public Todo updateTodoById(@PathVariable("id") UUID id, @NonNull @RequestBody Todo todo) {
-        return todoService.updateTodo(id, todo).orElse(null);
+        String title = todo.getTitle();
+        Boolean complete = todo.getCompleted();
+        if (title != null && complete != null) {
+            return todoService.updateTodo(id, todo).orElse(null);
+        }
+        else if (title != null) {
+            return todoService.updateTodoTitle(id, title).orElse(null);
+        }
+        else if (complete != null) {
+            return todoService.updateTodoCompleted(id, complete).orElse(null);
+        }
+        return null;
     }
 }

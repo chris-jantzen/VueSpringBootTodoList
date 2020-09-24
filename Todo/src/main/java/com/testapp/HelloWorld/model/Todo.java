@@ -19,7 +19,6 @@ public class Todo {
         return this.id;
     }
 
-
     public String getTitle() {
         return this.title;
     }

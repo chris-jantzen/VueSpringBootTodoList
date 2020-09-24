@@ -59,4 +59,14 @@ public class TodoMockDataAccessService implements TodoDao {
                     return null;
                 });
     }
+
+    @Override
+    public Optional<Todo> updateTodoTitleById(UUID id, String Title) {
+        return Optional.empty(); // Could implement but am not using the mock DB anymore
+    }
+
+    @Override
+    public Optional<Todo> updateTodoCompletedById(UUID id, Boolean completed) {
+        return Optional.empty(); // Could implement but am not using the mock DB anymore
+    }
 }

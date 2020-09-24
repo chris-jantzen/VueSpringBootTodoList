@@ -40,4 +40,12 @@ public class TodoService {
         return todoDao.updateTodoById(id, todo);
     }
 
+    public Optional<Todo> updateTodoTitle(UUID id, String title) {
+        return todoDao.updateTodoTitleById(id, title);
+    }
+
+    public Optional<Todo> updateTodoCompleted(UUID id, Boolean completed) {
+        return todoDao.updateTodoCompletedById(id, completed);
+    }
+
 }

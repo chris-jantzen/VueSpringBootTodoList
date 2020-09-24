@@ -25,4 +25,8 @@ public interface TodoDao {
     void deleteTodoById(UUID id);
 
     Optional<Todo> updateTodoById(UUID id, Todo todo);
+
+    Optional<Todo> updateTodoTitleById(UUID id, String Title);
+
+    Optional<Todo> updateTodoCompletedById(UUID id, Boolean completed);
 }
