@@ -28,11 +28,17 @@ export const getTodos = async () => {
   }
 }
 
-export const updateTodo = async (id, completed) => {
+export const markComplete = async (id, completed) => {
   try {
-    return await axios.put(`${baseRoute}/${id}`, {
-      completed,
-    })
+    return await axios.put(`${baseRoute}/${id}`, { completed })
+  } catch (err) {
+    console.error(err)
+  }
+}
+
+export const updateTitle = async (id, title) => {
+  try {
+    return await axios.put(`${baseRoute}/${id}`, { title })
   } catch (err) {
     console.error(err)
   }
