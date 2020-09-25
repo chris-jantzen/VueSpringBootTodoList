@@ -1,5 +1,5 @@
 <template>
-  <div class="todo-item">
+  <div class="todo-item" v-bind:class="{ 'todo-padding': !activeEdit }">
     <div class="title">
       <p
         id="item-text"
@@ -46,7 +46,7 @@ export default {
     DeleteSVG,
     EditSVG,
     CancelSVG,
-    SaveSVG
+    SaveSVG,
   },
   props: ['todo'],
   data() {
@@ -79,12 +79,15 @@ export default {
 <style scoped>
 .todo-item {
   background: #f4f4f4;
-  padding: 10px;
+  padding: 7px 10px;
   border-bottom: 1px #ccc dotted;
   display: flex;
   justify-content: space-between;
   align-items: center;
   overflow-x: hidden;
+}
+.todo-padding {
+  padding: 10px;
 }
 #item-text {
   cursor: pointer;
@@ -92,9 +95,10 @@ export default {
   align-items: center;
 }
 #editInputBox {
-  height: 35px;
+  margin-left: -5px;
+  padding: 5px;
   width: 35vw;
-  font-size: 1.25rem;
+  font-size: 1rem;
   border: 0;
   border-radius: 5px;
   padding-left: 5px;
@@ -112,32 +116,9 @@ export default {
   display: flex;
   align-items: center;
 }
-#delete,
-#edit,
-#cancel,
-#save {
+#edit {
   cursor: pointer;
   margin-right: 0.75rem;
-}
-#edit:hover path {
-  fill: #3b94b9;
-}
-#delete:hover path {
-  fill: #aa0000;
-}
-#cancel {
-  fill: red;
-  margin-right: 0.5rem;
-}
-#cancel:hover {
-  fill: #b40000;
-}
-#save {
-  fill: #2bd900;
-  margin-right: 0.5rem;
-}
-#save:hover {
-  fill: #1e9400 !important;
 }
 .primaryIcons,
 .onEditIcons {
