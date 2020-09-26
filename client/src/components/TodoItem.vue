@@ -68,9 +68,12 @@ export default {
     },
     async onEditSubmit() {
       this.activeEdit = false
-      this.todo.title = this.todoTitleCopy
-      this.todoTitleCopy = ''
-      await updateTitle(this.todo.id, this.todo.title)
+      // Make sure a new title has been entered
+      if (this.todoTitleCopy && this.todoTitleCopy !== this.todo.title) {
+        this.todo.title = this.todoTitleCopy
+        this.todoTitleCopy = ''
+        await updateTitle(this.todo.id, this.todo.title)
+      }
     },
   },
 }
@@ -86,6 +89,9 @@ export default {
   align-items: center;
   overflow-x: hidden;
 }
+.title {
+  width: 100%;
+}
 .todo-padding {
   padding: 10px;
 }
@@ -97,7 +103,7 @@ export default {
 #editInputBox {
   margin-left: -5px;
   padding: 5px;
-  width: 35vw;
+  width: 60%;
   font-size: 1rem;
   border: 0;
   border-radius: 5px;
