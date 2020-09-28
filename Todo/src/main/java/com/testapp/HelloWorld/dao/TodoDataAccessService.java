@@ -70,6 +70,7 @@ public class TodoDataAccessService implements TodoDao {
         return Optional.empty();
     }
 
+    @Override
     public Optional<Todo> updateTodoTitleById(UUID id, String title) {
         String sql = "UPDATE todo SET title = ? WHERE id = ?";
         int res = jdbcTemplate.update(sql, title, id);
@@ -79,6 +80,7 @@ public class TodoDataAccessService implements TodoDao {
         return Optional.empty();
     }
 
+    @Override
     public Optional<Todo> updateTodoCompletedById(UUID id, Boolean completed) {
         String sql = "UPDATE todo SET completed = ? WHERE id = ?";
         int res = jdbcTemplate.update(sql, completed, id);

@@ -39,6 +39,8 @@ form {
 input[type='text'] {
   flex: 10;
   padding: 5px;
+  border-radius: 0;
+  box-sizing: border-box;
 }
 
 input[type='submit'] {
