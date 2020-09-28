@@ -3,7 +3,6 @@ package com.testapp.HelloWorld.dao;
 import com.testapp.HelloWorld.model.Todo;
 import org.springframework.stereotype.Repository;
 
-import javax.websocket.MessageHandler;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Optional;
