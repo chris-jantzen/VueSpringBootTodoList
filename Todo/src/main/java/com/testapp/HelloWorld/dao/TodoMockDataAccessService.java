@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Optional;
 import java.util.UUID;
 
-@Repository("todoDao")
+@Repository("mockTodoDao")
 public class TodoMockDataAccessService implements TodoDao {
 
     private final static List<Todo> DB = new ArrayList<>();

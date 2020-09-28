@@ -62,7 +62,7 @@ public class TodoDataAccessService implements TodoDao {
     public Optional<Todo> updateTodoById(UUID id, Todo todo) {
         String title = todo.getTitle();
         Boolean completed = todo.getCompleted();
-        String sql = "UPDATE todo SET title = ?, completed = ? WHERE id = ?";
+        final String sql = "UPDATE todo SET title = ?, completed = ? WHERE id = ?";
         int res = jdbcTemplate.update(sql, title, completed, id);
         if (res == 1) {
             return Optional.of(new Todo(id, title, completed));
@@ -72,7 +72,7 @@ public class TodoDataAccessService implements TodoDao {
 
     @Override
     public Optional<Todo> updateTodoTitleById(UUID id, String title) {
-        String sql = "UPDATE todo SET title = ? WHERE id = ?";
+        final String sql = "UPDATE todo SET title = ? WHERE id = ?";
         int res = jdbcTemplate.update(sql, title, id);
         if (res == 1) {
             return selectTodoById(id);
@@ -82,7 +82,7 @@ public class TodoDataAccessService implements TodoDao {
 
     @Override
     public Optional<Todo> updateTodoCompletedById(UUID id, Boolean completed) {
-        String sql = "UPDATE todo SET completed = ? WHERE id = ?";
+        final String sql = "UPDATE todo SET completed = ? WHERE id = ?";
         int res = jdbcTemplate.update(sql, completed, id);
         if (res == 1) {
             return selectTodoById(id);
