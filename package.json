@@ -1,7 +1,7 @@
 {
   "name": "todoapp",
   "version": "1.0.0",
-  "description": "",
+  "description": "Todo list application built with VueJS and Spring Boot",
   "main": "index.js",
   "scripts": {
     "start": "concurrently \"npm run serve --prefix client\" \"java -jar Todo/target/HelloWorld-0.0.1-SNAPSHOT.jar\""
