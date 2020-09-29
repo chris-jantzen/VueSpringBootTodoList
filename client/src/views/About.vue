@@ -38,7 +38,7 @@ export default {
 
 .container p {
   font-size: 1.5rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .container ul li {
